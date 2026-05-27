@@ -1,0 +1,98 @@
+@import "tailwindcss";
+
+@import url('https://fonts.googleapis.com/css2?family=Hanken+Grotesk:wght@300;600;800;900&family=JetBrains+Mono:wght@400;500;700&display=swap');
+
+@theme {
+  --font-sans: "Hanken Grotesk", "Inter", ui-sans-serif, system-ui, sans-serif;
+  --font-mono: "JetBrains Mono", ui-monospace, SFMono-Regular, monospace;
+
+  --color-secondary-fixed-dim: #c6c6c7;
+  --color-background: #000000;
+  --color-surface: #131313;
+  --color-surface-container: #121212;
+  --color-surface-container-low: #1c1b1b;
+  --color-surface-container-lowest: #0e0e0e;
+  --color-surface-container-high: #2a2a2a;
+  --color-surface-container-highest: #353534;
+  --color-primary: #bac3ff;
+  --color-on-primary: #001e91;
+  --color-on-surface-variant: #c5c5d5;
+  --color-outline-variant: #1a1a1a;
+}
+
+@keyframes ticker {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(-50%);
+  }
+}
+
+@keyframes glitch {
+  0% {
+    clip-path: inset(80% 0 0 0);
+    transform: translate(-3px, -2px);
+  }
+  10% {
+    clip-path: inset(10% 0 80% 0);
+    transform: translate(3px, 2px);
+  }
+  20% {
+    clip-path: inset(50% 0 30% 0);
+    transform: translate(-2px, 1px);
+  }
+  30% {
+    clip-path: inset(0% 0 0% 0);
+    transform: translate(0);
+  }
+  100% {
+    clip-path: inset(0% 0 0% 0);
+    transform: translate(0);
+  }
+}
+
+.animate-ticker {
+  animation: ticker 30s linear infinite;
+}
+
+.glitch-layer {
+  mix-blend-mode: hard-light;
+  animation: glitch 3s infinite linear alternate-reverse;
+}
+
+.noir-bloom {
+  box-shadow: 0 0 15px 2px rgba(186, 195, 255, 0.155);
+}
+
+.bloom-purple {
+  box-shadow: 0 0 20px 2px rgba(186, 195, 255, 0.3);
+}
+
+.text-glow {
+  text-shadow: 0 0 15px rgba(186, 195, 255, 0.5);
+}
+
+.vertical-text {
+  writing-mode: vertical-rl;
+  text-orientation: mixed;
+}
+
+/* Force sharp corners on everything to align with Cine21 Noir theme style rules */
+* {
+  border-radius: 0px !important;
+}
+
+/* Custom scrollbar */
+.custom-scrollbar::-webkit-scrollbar {
+  height: 2px;
+  width: 2px;
+}
+
+.custom-scrollbar::-webkit-scrollbar-track {
+  background: #0e0e0e;
+}
+
+.custom-scrollbar::-webkit-scrollbar-thumb {
+  background: #bac3ff;
+}

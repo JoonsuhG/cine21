@@ -1,0 +1,6 @@
+{
+  "name": "Cine21",
+  "description": "A curated portal and news guide for cinema noir and modern cinematic releases, featuring reviews, scheduling screens, and exclusive articles.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}
